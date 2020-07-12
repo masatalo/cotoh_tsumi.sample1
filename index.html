@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>古塔つみ</title>
+  <link rel="stylesheet" href="css/normalize.css"> <!-- リセットCSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> <!-- フォントオーサム -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- ハンバーガークリックアニメ -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&family=Noto+Serif+JP:wght@700&display=swap">
+  <!-- googleフォント -->
+  <link rel="icon" href="img/favicon.png"> <!-- ファビコン -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- masonry CDN -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script> <!-- 画像重なる処置ファイルの読み込み -->
+ 
+<script>  
+
+
+jQuery(function($){
+    
+    var min_width = 480;
+    //画面幅による分岐と imagesLoaded, Masonry のイニシャライズを関数化
+    function masonry_update() {
+      var $container = $('#container');
+      if ( $('html').width() < min_width ) {
+        $container.masonry('destroy');
+      } else {
+        $container.imagesLoaded(function(){
+          $container.masonry({
+            itemSelector: '.item',
+            isFitWidth: true,
+            columnWidth: 113  //写真のサイズ
+          });
+        });
+      }
+    }
+    
+    masonry_update();
+    
+    //リサイズ時の処理
+    var timer = false;
+    $(window).resize(function(){
+      if (timer !== false) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(function() {
+        masonry_update();
+      }, 200);
+    });  
+  });
+</script>
+
+</head>
+
+<body>
+  <header id="top-head">
+    <div class="inner">
+      <div id="mobile-head"> 
+        <img class="topicon" src="img/topicon.jpg" alt="topicon">
+        <h1 class="logo">古塔つみ</h1>
+      </div>
+
+        <div id="nav-toggle">
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      <nav id="global-nav">
+        <ul>
+          <li><a href="https://instagram.com/cotoh_tsumi">instagram</a></li>
+          <li><a href="https://twitter.com/cotoh_tsumi">twitter</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </header>
+
+  <main>
+    <div id="container">
+      <div class="wrapper">
+        <div class="item x3"><img src="img/Ea-LpLRUwAALKpa.jpg" alt=""></div>
+        <div class="item x3"><img src="img/Ea4m_wrUcAAtqrk.jpg" alt=""></div>
+        <div class="item x3"><img src="img/Ea8eB3qVcAARs8G.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaFdKFIUMAIk6RE.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaJHiRvVAAEREmm.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EakLsXaU0AMdKNQ.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaktFX_UMAAyvEK.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EatDC7SU0AAEo7d.jpg" alt=""></div>
+        <div class="item x3"><img src="img/Eau_zmVVcAAuy5y.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaUt-v6UcAExbsX.jpg" alt=""></div>
+        <div class="item x3"><img src="img/Eayb6cAUMAAPBbl.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaybuebVcAE_N82.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaybVpxVcAAv4RR.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaZlAVBU8AEQB4S.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EaZV7GzUYAUQbMp.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EbIfqcMUcAEtA9y.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EbOCNQBU0AA-xnX.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EbXxgJJU0AE5aSR.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EN2NF8ZUYAEXo87.jpg" alt=""></div>
+        <div class="item x3"><img src="img/EN7gPMrU8AAjn0i.jpg" alt=""></div>
+        <div class="item x3"><img src="img/ENcrnaQUEAATmYE.jpg" alt=""></div>
+      </div>
+   
+    </div>
+
+
+  </main>
+
+  <footer class="footer">
+    <section class="content-wrapper">
+      <div class="high">
+        <h1>古塔つみ</h1>
+        <ul>
+          <li><a href="#instutution">instagram</a></li>
+          <li><a href="#recruit">twitter</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </div>
+      <div class="low">
+        〒000-0000<span>東京都〇〇</span><br>TEL :012-3456-7890
+      </div>
+      <p>&copy;masaworks-FITNESS</p>
+    </section>
+  </footer>
+
+  <!--- 上に戻るボタン ----->
+  <div id="pagetop"><a href="#"></a></div>
+  <!-- masonry -->
+  <script src="js/masonry.pkgd.min.js"></script>
+  <!-- imagesLoaded -->
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+</body>
+
+</html>

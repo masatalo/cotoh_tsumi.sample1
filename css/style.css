@@ -1,0 +1,461 @@
+@charset "UTF-8";
+
+html {
+  margin: 0;
+  padding:0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
+  font-weight: 500;
+  color: #444;
+  line-height: 2.0;
+  letter-spacing: 0.1em;
+  box-sizing: border-box;
+}
+*,*:before,*:after {
+  -webkit-box-sizing: border-box;/*paddingとborderを幅と高さに含める*/
+  box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+}
+h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+  vertical-align: middle; 
+}
+figure {
+  margin: 0;
+  
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul,li,dl,dt,dd {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+a { 
+  text-decoration: none;
+  transition: all .6s ease; /*全てのプロパティ・変化までの時間・開始と終了時緩やかに*/
+}
+a:hover { 
+  transition:all .6s ease;
+}
+section {
+  margin-bottom: 120px;
+}
+.content-wrapper {
+   width: 100%; /*修正前95*/
+   margin: 0 auto;
+   max-width: 1400px; /*これ以上大きくならない*/
+ }
+section h2 {
+  font-size: 2rem;
+}
+/*== header start == */
+.inner { /** ヘッダー部全体 **/
+  display:inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* background-color:rgba(36,175,226,0.626);  */
+  width: 4vw;
+  height: 100%;
+  writing-mode: vertical-lr; /* 縦書き */
+  margin: 0;
+}
+.inner:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* header */
+#top-head {
+  width: 100%;
+  width: 4.5vw;
+  line-height: 1; 
+  position: absolute;
+  position: fixed;
+  z-index:1;/*修正前999*/
+}
+#top-head a,
+#top-head {
+  color: #fff;
+  text-decoration: none;
+}
+#top-head .inner {
+  position: relative;
+}
+#top-head .logo { /* 古塔つみ */
+  display: inline-block;
+  font-size: 1.5vw;
+  width: 4vw;
+  color: #444;
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: 0.75em;
+}
+#mobile-head {
+  width: 4vw;
+  vertical-align: middle;
+  margin-top: 20px;
+  /* background-color: pink; */
+}
+#top-head .topicon { /*アイコン*/
+  width: 4vw;
+  border-radius: 50%;
+  margin:30px 0;
+}
+#global-nav ul { /* SNSリスト */
+  display: flex; 
+  list-style: none;
+  font-size: 1vw;
+}
+#global-nav ul li {
+  margin: 30px 15px;
+}
+#global-nav ul li a {
+  padding: 0 10px; 
+  color: #444;
+}
+
+/* Fixed */
+#top-head.fixed {/*スクロール時のヘッダーの位置*/
+  margin-top: 0;
+  top: 0;
+  position: fixed;
+  /* padding-top: 10px; */
+  /* height:55px;修正前55 */
+  /* transition: top 0.65s ease-in;  表示させるタイミング */
+  /* -webkit-transition: top 0.65s ease-in;  */
+  /* -moz-transition: top 0.65s ease-in;  */
+}
+#top-head.fixed .logo { /*FITNESSのロゴ*/
+  font-size: 2.25vw;
+  color: #fff;
+  z-index: 1;
+}
+#top-head.fixed #global-nav ul li a {
+  color: #fff;
+  /* padding: 0 20px; */
+}
+
+/* Toggle Button */
+#nav-toggle { /*ハンバーガー部分*/
+  display: none;
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  width: 34px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 101;
+}
+#nav-toggle div {
+  position: relative;
+}
+#nav-toggle span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 80%;
+  background: #fff;
+  left: 0;
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) { /*ハンバーガー線*/
+  top:0px;
+}
+#nav-toggle span:nth-child(2) {
+  top: 7px;
+}
+#nav-toggle span:nth-child(3) {
+  top: 14px;
+}
+
+/* masonry */
+#container {
+  width: 100%;
+  margin: 0 auto;   /* 中央寄せ */
+  position: relative;
+}
+.wrapper {
+  position: absolute;
+  top: 15px;
+  left: 55px;
+}
+.item {
+  margin-top:20px;
+  width: 140px;
+  padding: 8px;
+  box-shadow: 6px 6px 8px;
+  /* border: 1px solid #eee; */
+  /* background-color: pink; */
+}
+.item.x2 {
+  width: 320px;
+}
+.item.x3 {
+  width: 400px;
+}
+.item img {
+  width: 100%;
+}
+
+/* footer */
+.footer .high {
+  border-bottom: 2px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;/*ボーダーにくっつける*/
+}
+.footer .high h1 {
+  font-size: 2rem;
+}
+.footer .high ul {
+  display: flex;
+  margin-bottom: 25px;
+}
+.footer .high li a{
+  font-size: 1.25rem;
+  color: #333;
+  padding: 0 25px;
+}
+.footer .high li a:hover {
+  opacity: 0.6;
+  color: blue;
+}
+.footer .low {
+  padding: 25px 0 80px 0;
+  color: #333;
+}
+.footer .low span {
+  padding-left: 1em;
+}
+.footer section p{
+  color: #333;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+/* 上に戻るボタン*/
+#pagetop{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 25px;
+  bottom: 150px;
+  background: #949494;/*ボタンの色*/
+  opacity: 0.6;
+  border-radius: 50%;
+}
+#pagetop a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center;
+}
+#pagetop a::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f106"; /*アイコン*/
+  font-weight: 900;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -12px;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+  margin: auto;
+}
+
+
+
+
+@media screen and (max-width: 1199px){
+    
+  .footer h1  {
+    margin-left: 50px;
+  }
+  .footer .high {
+    display: flex; 
+    margin: 0 30px;
+  }
+  .footer .low {
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  #top-head,
+  .inner { 
+      width: 100%;
+      height: 5rem; 
+      padding: 0;
+      text-align: center;
+  }
+  #top-head {
+      top:0px;
+      position: fixed;
+      margin-top: 0;
+  }
+  /* Fixed reset */
+  #top-head.fixed {
+      padding-top: 0;
+      background: transparent;
+      background-color:rgba(36,175,226,0.626);
+      height: 1vh;
+  }
+  #mobile-head {
+      width: 100%;
+      height: 3rem;
+      z-index:999;/*修正前999*/
+      position: relative;
+  }
+  #top-head.fixed .logo,
+  #top-head .logo { /*masawaorksの設定*/
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      color: #fff;
+      font-size: 4vw;
+  }
+  #global-nav {
+    position: absolute;
+    /* 開いてないときは画面外に配置 */
+    top: -475px;
+    background: #888; 
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+  #global-nav ul {
+    list-style: none;
+    position: static;
+    right: 0;
+    bottom: 0;
+    font-size: 2.5vw;
+    display: block;
+  }
+  #global-nav ul li {
+      float: none; 
+      position: static;
+      border-bottom: 1px solid #fff;
+      /* padding-bottom: 5rem; */
+      /* background-color: #777; */
+      margin: 0;/*画面幅一杯に*/
+      /* padding: 0; */
+      /* height: 2rem; */
+      /* line-height: 5vh;  */
+      /* background: #000; */
+  }
+  #global-nav .phone{
+    padding: 10px 0;
+  }
+  .shadow {
+    position: absolute;
+    top:0;
+    left: 40%;
+  }
+  #top-head #global-nav ul li a,
+  #top-head.fixed #global-nav ul li a {
+      width: 100%;
+      display: block;
+      /* flex-direction: column; */
+      color:#ddd;
+      padding: 10px 0;
+  }
+  #nav-toggle {
+      display: block;
+  }
+ /* #nav-toggle 切り替えアニメーション */
+ .open #nav-toggle span:nth-child(1) {
+  top: 11px;
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+.open #nav-toggle span:nth-child(2) {
+  width: 0;
+  left: 50%;
+}
+.open #nav-toggle span:nth-child(3) {
+  top: 11px;
+  -webkit-transform: rotate(-315deg);
+  -moz-transform: rotate(-315deg);
+  transform: rotate(-315deg);
+}
+/* #global-nav スライドアニメーション */
+.open #global-nav {
+  /* #global-nav top + #mobile-head height  */
+  -moz-transform: translateY(556px);
+  -webkit-transform: translateY(556px);
+  transform: translateY(556px); 
+}
+
+
+  
+  .footer section {
+    padding-top: 50px;
+  }
+  .footer .high {
+    display: block;
+  }
+  .footer .high li {
+    width: calc(100%/3);/*3分割して均等配置*/
+    margin: 0 0 10px;
+  }
+  .footer .high h1 {
+    text-align: center;
+  }
+  .footer .low {
+    display: block; 
+    text-align: center;
+  }
+  .footer .high li a {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+
+@media screen and (max-width: 640px) {
+  
+  .footer .section {
+    padding-top: 50px;
+  } 
+
+}
+@media screen and (max-width:479px) {
+  
+  .footer {
+    margin: 0 auto !important;
+  }
+  .footer .high h1 {
+    text-align: center;
+    margin: 0 !important;
+    font-size: 2rem;
+  }
+  .footer .low  {
+    text-align: center;
+    margin: 0 !important;
+    font-size: 1rem;
+  }
+  .footer .high li a {
+    font-size: 1rem;
+  }
+}
